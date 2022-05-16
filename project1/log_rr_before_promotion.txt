@@ -1,0 +1,39 @@
+[ec2-user@ip-10-2-11-182 ~]$ clear
+[ec2-user@ip-10-2-11-182 ~]$ export MYSQL_SERVER=udacity-secondary-standby.cmcuv2bedge2.eu-central-1.rds.amazonaws.com
+[ec2-user@ip-10-2-11-182 ~]$ export MYSQL_PORT=3306
+[ec2-user@ip-10-2-11-182 ~]$ mysql -u admin -p -h $MYSQL_SERVER --port $MYSQL_PORT
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 859
+Server version: 8.0.28 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> USE udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MySQL [udacity]> SHOW TABLES;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| COURSES           |
++-------------------+
+1 row in set (0.00 sec)
+
+MySQL [udacity]> SELECT * FROM COURSES WHERE PARTICIPANTS > 10;
++-----------------------+--------------+
+| TITLE                 | PARTICIPANTS |
++-----------------------+--------------+
+| Udacity AWS Architect |           22 |
+| Udacity AWS Devops    |           15 |
+| AI for beginners      |          150 |
++-----------------------+--------------+
+3 rows in set (0.00 sec)
+
+MySQL [udacity]> INSERT INTO COURSES ( TITLE, PARTICIPANTS) VALUES ("Udacity AWS Architect", "22");
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [udacity]>

@@ -1,0 +1,17 @@
+In case the database does not run in the affected AZ, RTO and RPO are zero.
+
+In case the AZ of the primary DB is affected, them minimum RTO for a single 
+AZ outage could be very low, if the problem is detected by Amazon, directly. 
+Amazon says "typically 60–120 seconds" in case of an infrastructure defect (see: 
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZSingleStandby.html).
+
+In case the whole region of the primary database is affected, the minimum RTO to 
+switch over to the replicated database will be similar, but the new URL will have to be
+promoted to the productive Applications as well. 
+If this process is automized, it still depends on the complexity of the application. 
+This can easily add some more minutes.
+    
+The minimum RPO should be the same for an AZ outage and a Region outage, because the RPO ends,
+when the primary DB does not accept new data anymore. This RPO time could be very low, if the 
+problem is detected aurtomatically (by Amazon). In this case it should be in the magnitude of
+seconds (<1min).

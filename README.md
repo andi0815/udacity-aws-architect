@@ -1,3 +1,3 @@
 # udacity-aws-architect
 
-Collection of my exercise results
+Collection of my exercise results and scripts

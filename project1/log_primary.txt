@@ -1,0 +1,54 @@
+[ec2-user@ip-10-1-10-32 ~]$ mysql -u admin -p -h udacity-project-primary.cu1yvorshmgl.us-east-1.rds.amazonaws.com --port 3306
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 852
+Server version: 8.0.28 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> CREATE TABLE COURSES( TITLE CHAR(100) NOT NULL, PARTICIPANTS INT);
+ERROR 1046 (3D000): No database selected
+MySQL [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.02 sec)
+
+MySQL [(none)]> USE udacity;
+Database changed
+MySQL [udacity]> CREATE TABLE COURSES( TITLE CHAR(100) NOT NULL, PARTICIPANTS INT);
+Query OK, 0 rows affected (0.11 sec)
+
+MySQL [udacity]> INSERT INTO COURSES ("Udacity AWS Architect", 22);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"Udacity AWS Architect", 22)' at line 1
+MySQL [udacity]> INSERT INTO COURSES ("Udacity AWS Architect", "22");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"Udacity AWS Architect", "22")' at line 1
+MySQL [udacity]> INSERT INTO COURSES ( TITLE, PARTICIPANTS) VALUES ("Udacity AWS Architect", "22");
+Query OK, 1 row affected (0.00 sec)
+
+MySQL [udacity]> INSERT INTO COURSES ( TITLE, PARTICIPANTS) VALUES ("Udacity AWS Devops", 15);
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity]> INSERT INTO COURSES ( TITLE, PARTICIPANTS) VALUES ("AI for beginners", 150);
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity]> SELECT * FROM COURSES WHERE PARTICIPANTS > 10;
++-----------------------+--------------+
+| TITLE                 | PARTICIPANTS |
++-----------------------+--------------+
+| Udacity AWS Architect |           22 |
+| Udacity AWS Devops    |           15 |
+| AI for beginners      |          150 |
++-----------------------+--------------+
+3 rows in set (0.00 sec)
+
+MySQL [udacity]> DROP TABLE COURSES;
+Query OK, 0 rows affected (0.02 sec)
