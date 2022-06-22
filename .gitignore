@@ -1,2 +1,7 @@
 # backup files
 bak
+
+# terraform files
+.terraform*
+*.tfstate
+*.tfstate.backup
