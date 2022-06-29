@@ -3,8 +3,12 @@
 
 # backup files
 bak
+*.drawio.bkp
 
 # terraform files
 .terraform*
 *.tfstate
 *.tfstate.backup
+
+# generated files
+lambda.zip
