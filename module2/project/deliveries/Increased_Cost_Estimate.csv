@@ -1,0 +1,16 @@
+﻿"sep=,"
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+Estimate udacity task 2,US East (N. Virginia),NAT Gateway (~100GB/month),Network Address Translation (NAT) Gateway,0,77.85,934.20,USD,Number of NAT Gateways (1)
+Estimate udacity task 2,US East (N. Virginia),,Amazon CloudFront,0,880,10560.00,USD,"Data transfer out to internet (10000 GB per month), Data transfer out to origin (1000 GB per month), Number of requests (HTTPS) (10000000 per month)"
+Estimate udacity task 2,US East (N. Virginia),,S3 Standard,0,2705.22,32462.64,USD,S3 Standard storage (200 GB per month)
+Estimate udacity task 2,US East (N. Virginia),,Data Transfer,0,0,0.00,USD,"DT Inbound: Not selected (1 TB per month), DT Outbound: Not selected (0 TB per month)"
+Estimate udacity task 2,US East (N. Virginia),Scaled WebServers (On-Demand),Amazon EC2,0,697.14,8365.68,USD,"Operating system (Linux), Quantity (9), Pricing strategy (On-Demand Instances), Storage amount (30 GB), Instance type (a1.xlarge)"
+Estimate udacity task 2,US East (N. Virginia),Application Servers (10 Servers On Demand),Amazon EC2,0,8512.03,102144.36,USD,"Operating system (Linux), Quantity (24), Pricing strategy (On-Demand Instances), Storage amount (100 GB), Instance type (r6g.xlarge), Provisioning IOPS io2 (3000)"
+Estimate udacity task 2,US East (N. Virginia),On Demand,DynamoDB on-demand capacity,0,1218.75,14625.00,USD,"Table class (Standard), Average item size (all attributes) (300 KB), Data storage size (3000 GB)"
+Estimate udacity task 2,US East (N. Virginia),On Demand,DynamoDB Backup and restore,0,4500,54000.00,USD,"On-demand backup data storage (10000 GB), Point-In-Time Recovery (PITR) data storage (10000 GB), Table data restored (10000 GB)"
+Estimate udacity task 2,US East (N. Virginia),Replica,DynamoDB on-demand capacity,0,1218.75,14625.00,USD,"Table class (Standard), Average item size (all attributes) (300 KB), Data storage size (3000 GB)"
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."

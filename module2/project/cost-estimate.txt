@@ -1,0 +1,21 @@
+Initial Cost:
+https://calculator.aws/#/estimate?id=f3f58d6563f8be01db4f02d71161f1b0861e62dd
+
+Reduced Cost:
+https://calculator.aws/#/estimate?id=ab5e6983b2f96e53320391d960174b263a2154a6
+Changes Made:
+- AppServers: Partial Provisioning for 1 year
+- WebServers: Full Provisioning for 1 year
+- S3: Introduce IA
+
+Increased Cost:
+https://calculator.aws/#/estimate?id=e6d4fae282fb368f6403d62e7b0449bf258ba08b
+Changes Made:
+- AppServers:
+  - Increase quantity by 50% to reduce load on individual instances
+  - Use IOPS Storage for increased access times (io2 w. 3000 IOPS)
+- WebServers: increase quantity by 50%
+- CloudFront:
+  - Use all Edge Locations to increase regional performance
+- DynamoDB:
+  - Add Backup to be able to store the data outside of the region to increase resiliency
