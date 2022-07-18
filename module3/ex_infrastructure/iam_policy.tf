@@ -9,7 +9,7 @@ resource "aws_iam_policy" "policy" {
   "Statement": [
     {
       "Action": [
-        "*"
+        "s3:GetObject"
       ],
       "Effect": "Allow",
       "Resource": "*"
