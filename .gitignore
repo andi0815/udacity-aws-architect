@@ -10,5 +10,6 @@ bak
 *.tfstate
 *.tfstate.backup
 
-# generated archives
+# generated files
 *.zip
+plan.tfplan
