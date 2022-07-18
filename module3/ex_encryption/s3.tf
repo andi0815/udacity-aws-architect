@@ -1,6 +1,11 @@
 # s3: bucket
 resource "aws_s3_bucket" "encrypted_bucket" {
   bucket = "udacity-encrypted-bucket"
+  # allow deletion of a non-empty bucket
+  force_destroy = true
+  lifecycle {
+    prevent_destroy = false
+  }
 }
 
 # s3 encryption: terraform bucket
