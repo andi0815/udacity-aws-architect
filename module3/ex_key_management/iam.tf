@@ -132,6 +132,17 @@ resource "aws_kms_key" "cand-c3-l3-ex2-key" {
           "Resource" : "*"
         },
         {
+          "Sid" : "Allow use of the key for decryption, only",
+          "Effect" : "Allow",
+          "Principal" : {
+            "AWS" : "arn:aws:iam::697203805168:role/cand-c3-l3-ex2-read"
+          },
+          "Action" : [
+            "kms:Decrypt",
+          ],
+          "Resource" : "*"
+        },
+        {
           "Sid" : "Allow attachment of persistent resources",
           "Effect" : "Allow",
           "Principal" : {
