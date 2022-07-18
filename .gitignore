@@ -10,5 +10,5 @@ bak
 *.tfstate
 *.tfstate.backup
 
-# generated files
-lambda.zip
+# generated archives
+*.zip
